@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      .up_inner {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 40px;
+        margin-left: 50px;
+        margin-right: 50px;
+      }
+      .up_title {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 40px;
+        margin-left: 50px;
+        margin-right: 50px;
+        font-size: 40px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+      }
+
+      .titles {
+        margin-top: 20px;
+        margin-left: 70px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .chart_tab {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding-top: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+      }
+      .tak1 {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+
+      .main_chart_sec {
+        padding-left: 20px;
+        margin-left: 50px;
+        height: 500px;
+        width: 500px;
+      }
+
+      .chart_y{
+        margin-left: -130px;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="outer">
+      <div class="up_title">
+        <h2>Statistics (Demo)</h2>
+      </div>
+      <div class="up_inner">
+        <div class="row">
+          <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media d-flex">
+                    <div class="align-self-center">
+                      <i class="icon-user success font-large-2 float-left"></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h3>928</h3>
+                      <span>Enrolled Students</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media d-flex">
+                    <div class="align-self-center">
+                      <i
+                        class="icon-book-open primary font-large-2 float-left"
+                      ></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h3>56</h3>
+                      <span>Courses Offered</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media d-flex">
+                    <div class="align-self-center">
+                      <i class="icon-graph success font-large-2 float-left"></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h3>78</h3>
+                      <span>Fee Pending</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media d-flex">
+                    <div class="align-self-center">
+                      <i
+                        class="icon-support success font-large-2 float-left"
+                      ></i>
+                    </div>
+                    <div class="media-body text-right">
+                      <h3>42</h3>
+                      <span>Support Queries</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container float-left" style="margin-left: 70px">
+      <div class="row tak1">
+        <div class="col-md-6">
+          <h3 class="titles">Assignment Taken</h3>
+          <div class="main_chart_sec">
+            <div class="chart_tab">
+              <canvas id="chart_assign"> </canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 chart_y"">
+          <h3 class="titles">Attendance Summary</h3>
+          <div class="main_chart_sec">
+            <div class="chart_tab">
+              <canvas id="Chart1"> </canvas>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let mychart = document.getElementById("chart_assign").getContext("2d");
+    let avg_assign = new Chart(mychart, {
+      type: "bar",
+      data: {
+        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+        datasets: [
+          {
+            label: "Assignments Taken",
+            data: [56, 49, 61, 68],
+            backgroundColor: ["#904C77", "#E49AB0", "#ECB8A5", "#957D95"],
+            hoverBorderWidth: 1,
+            hoverBorderColor: "#000",
+          },
+        ],
+      },
+      backgroundColor: "white",
+    });
+
+    const labels = ["1-5", "6-10", "11-15", "16-20", "21-25", "26-31"];
+
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Student Attendace %",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [0, 10, 5, 2, 20, 30, 45],
+        },
+      ],
+    };
+
+    const config = {
+      type: "line",
+      data: data,
+      options: {},
+    };
+
+    const myChart = new Chart(document.getElementById("Chart1"), config);
+  </script>
+</html>
